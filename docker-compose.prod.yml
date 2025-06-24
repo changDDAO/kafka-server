@@ -1,0 +1,11 @@
+services:
+  kafka:
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+    ports:
+      - "9092:9092"  # 운영에서 내부용으로만 열고 싶다면 제거해도 됨
+
+networks:
+  msa-net:
+    external: true
